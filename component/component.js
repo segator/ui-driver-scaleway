@@ -14,6 +14,7 @@ define('ui/components/machine/driver-%%DRIVERNAME%%/component', ['exports', 'emb
         region: '',
         debug: false,
         image: 'ubuntu-xenial',
+        name: '',
         ip: '',
         ipv6: false,
         organization: '',
@@ -53,6 +54,10 @@ define('ui/components/machine/driver-%%DRIVERNAME%%/component', ['exports', 'emb
 
       if (!this.get('model.%%DRIVERNAME%%Config.image') ) {
         errors.push('Specifying a %%DRIVERNAME%% Image is required');
+      }
+
+      if (!this.get('model.%%DRIVERNAME%%Config.name') ) {
+        errors.push('Specifying a %%DRIVERNAME%% Name is required');
       }
 
       // Set the array of errors for display,
